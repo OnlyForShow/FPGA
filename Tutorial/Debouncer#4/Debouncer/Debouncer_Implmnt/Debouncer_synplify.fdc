@@ -1,0 +1,5 @@
+
+#1001 : create_clock -period 40.00 -name i_clk [get_ports i_clk]
+# line 1 in z:/home/wrongthink/projects/fpga/tutorial/debouncer#4/switch_led_clock.sdc
+
+create_clock -period {40.000} -name {i_clk} [get_ports {i_clk}]

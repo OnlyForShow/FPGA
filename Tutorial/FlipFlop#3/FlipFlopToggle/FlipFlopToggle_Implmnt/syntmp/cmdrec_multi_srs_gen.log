@@ -1,0 +1,7 @@
+C:\lscc\iCEcube2.2020.12\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  Z:\home\wrongthink\Projects\FPGA\Tutorial\FlipFlop#3\FlipFlopToggle\FlipFlopToggle_Implmnt\synwork\FlipFlopToggle_comp.srs  -osyn  Z:\home\wrongthink\Projects\FPGA\Tutorial\FlipFlop#3\FlipFlopToggle\FlipFlopToggle_Implmnt\synwork\FlipFlopToggle_mult.srs  -log  Z:\home\wrongthink\Projects\FPGA\Tutorial\FlipFlop#3\FlipFlopToggle\FlipFlopToggle_Implmnt\synlog\FlipFlopToggle_multi_srs_gen.srr 
+rc:0 success:1 runtime:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\FlipFlop#3\FlipFlopToggle\FlipFlopToggle_Implmnt\synwork\FlipFlopToggle_comp.srs|io:i|time:1776439501|size:1773|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\FlipFlop#3\FlipFlopToggle\FlipFlopToggle_Implmnt\synwork\FlipFlopToggle_mult.srs|io:o|time:1776439502|size:1528|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\FlipFlop#3\FlipFlopToggle\FlipFlopToggle_Implmnt\synlog\FlipFlopToggle_multi_srs_gen.srr|io:o|time:1776439502|size:713|exec:0
+file:C:\lscc\iCEcube2.2020.12\synpbase\bin\syn_nfilter.exe|io:i|time:1749665619|size:3128320|exec:1
+file:C:\lscc\iCEcube2.2020.12\synpbase\bin64\syn_nfilter.exe|io:i|time:1749665621|size:3947520|exec:1

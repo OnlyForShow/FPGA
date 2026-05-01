@@ -1,0 +1,2 @@
+@W: FX1039 :"z:\home\wrongthink\projects\fpga\tutorial\flipflop#3\flipflop.vhdl":16:37:16:39|User-specified initial value defined for instance r_led_1 is being ignored. 
+@W: FX1039 :"z:\home\wrongthink\projects\fpga\tutorial\flipflop#3\flipflop.vhdl":23:12:23:13|User-specified initial value defined for instance r_switch_1 is being ignored. 

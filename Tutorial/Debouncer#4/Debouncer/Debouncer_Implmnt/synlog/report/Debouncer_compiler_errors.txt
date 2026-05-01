@@ -1,0 +1,5 @@
+@E: CS187 :"Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl":19:23:19:23|Expecting ,
+@E: CD415 :"Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl":23:33:23:33|Expecting keyword is
+@E: CD415 :"Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl":29:20:29:20|Expecting keyword of
+@E: Parse errors encountered - exiting
+

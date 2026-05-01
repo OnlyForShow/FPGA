@@ -1,0 +1,4 @@
+@W: FX1039 :"z:\home\wrongthink\projects\fpga\tutorial\debouncer#4\debounce.vhdl":23:4:23:5|User-specified initial value defined for instance Debounce_Inst.r_Count[17:0] is being ignored. 
+@W: FX1039 :"z:\home\wrongthink\projects\fpga\tutorial\debouncer#4\debounce.vhdl":23:4:23:5|User-specified initial value defined for instance Debounce_Inst.r_State is being ignored. 
+@W: FX1039 :"z:\home\wrongthink\projects\fpga\tutorial\debouncer#4\flipflop.vhdl":16:37:16:39|User-specified initial value defined for instance LED_Toggle_Inst.r_led_1 is being ignored. 
+@W: FX1039 :"z:\home\wrongthink\projects\fpga\tutorial\debouncer#4\flipflop.vhdl":23:12:23:13|User-specified initial value defined for instance LED_Toggle_Inst.r_switch_1 is being ignored. 

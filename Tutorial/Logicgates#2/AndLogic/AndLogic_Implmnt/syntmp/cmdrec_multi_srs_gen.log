@@ -1,0 +1,7 @@
+C:\lscc\iCEcube2.2020.12\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  Z:\home\wrongthink\Projects\FPGA\Tutorial\Logicgates#2\AndLogic\AndLogic_Implmnt\synwork\AndLogic_comp.srs  -osyn  Z:\home\wrongthink\Projects\FPGA\Tutorial\Logicgates#2\AndLogic\AndLogic_Implmnt\synwork\AndLogic_mult.srs  -log  Z:\home\wrongthink\Projects\FPGA\Tutorial\Logicgates#2\AndLogic\AndLogic_Implmnt\synlog\AndLogic_multi_srs_gen.srr 
+rc:0 success:1 runtime:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Logicgates#2\AndLogic\AndLogic_Implmnt\synwork\AndLogic_comp.srs|io:i|time:1776434383|size:1572|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Logicgates#2\AndLogic\AndLogic_Implmnt\synwork\AndLogic_mult.srs|io:o|time:1776434384|size:1341|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Logicgates#2\AndLogic\AndLogic_Implmnt\synlog\AndLogic_multi_srs_gen.srr|io:o|time:1776434384|size:862|exec:0
+file:C:\lscc\iCEcube2.2020.12\synpbase\bin\syn_nfilter.exe|io:i|time:1749665619|size:3128320|exec:1
+file:C:\lscc\iCEcube2.2020.12\synpbase\bin64\syn_nfilter.exe|io:i|time:1749665621|size:3947520|exec:1

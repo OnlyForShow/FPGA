@@ -1,0 +1,39 @@
+#defaultlanguage:vhdl
+#OPTIONS:"|-layerid|0|-orig_srs|Z:\\home\\wrongthink\\Projects\\FPGA\\Tutorial\\Debouncer#4\\Debouncer\\Debouncer_Implmnt\\synwork\\Debouncer_comp.srs|-autotop|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\bin64\\c_vhdl.exe":1749665619
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\location.map":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\std.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\snps_haps_pkg.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\std1164.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\numeric.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\umr_capim.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\arith.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\unsigned.vhd":1749665622
+#CUR:"C:\\lscc\\iCEcube2.2020.12\\synpbase\\lib\\vhd\\hyperents.vhd":1749665622
+#CUR:"Z:\\home\\wrongthink\\Projects\\FPGA\\Tutorial\\Debouncer#4\\FlipFlop.vhdl":1776439276
+#CUR:"Z:\\home\\wrongthink\\Projects\\FPGA\\Tutorial\\Debouncer#4\\debounce.vhdl":1776491707
+#CUR:"Z:\\home\\wrongthink\\Projects\\FPGA\\Tutorial\\Debouncer#4\\system.vhdl":1776499964
+0 "Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\FlipFlop.vhdl" vhdl
+1 "Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\debounce.vhdl" vhdl
+2 "Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl" vhdl
+
+# Dependency Lists (Uses list)
+0 -1
+1 -1
+2 1 0 
+
+# Dependency Lists (Users Of)
+0 2 
+1 2 
+2 -1
+
+# Design Unit to File Association
+arch work led_toggle rtl 0
+module work led_toggle 0
+arch work debounce rtl 1
+module work debounce 1
+arch work debounce_project rtl 2
+module work debounce_project 2
+
+
+# Configuration files used

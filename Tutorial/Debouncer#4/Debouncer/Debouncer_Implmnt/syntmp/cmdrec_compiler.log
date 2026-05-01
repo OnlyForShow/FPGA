@@ -1,0 +1,9 @@
+C:\lscc\iCEcube2.2020.12\synpbase\bin64\c_hdl.exe  -osyn  Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\Debouncer\Debouncer_Implmnt\synwork\Debouncer_comp.srs  -hdllog  Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\Debouncer\Debouncer_Implmnt\synlog\Debouncer_compiler.srr  -encrypt  -mp  4  -verification_mode 0  -vhdl  -prodtype  synplify_pro  -primux -fixsmult -infer_seqShift -ice -sdff_counter -nram -divnmod -nostructver  -encrypt  -pro  -dmgen  Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\Debouncer\Debouncer_Implmnt\dm  -lite -ui -fid2 -ram -sharing on -ll 2000 -autosm  -ignore_undefined_lib  -lib work Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\FlipFlop.vhdl -lib work Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\debounce.vhdl -lib work Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl 
+rc:0 success:1 runtime:2
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\Debouncer\Debouncer_Implmnt\synwork\Debouncer_comp.srs|io:o|time:1776500674|size:4102|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\Debouncer\Debouncer_Implmnt\synlog\Debouncer_compiler.srr|io:o|time:1776500674|size:3227|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\FlipFlop.vhdl|io:i|time:1776439276|size:699|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\debounce.vhdl|io:i|time:1776491707|size:752|exec:0
+file:Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl|io:i|time:1776499964|size:699|exec:0
+file:C:\lscc\iCEcube2.2020.12\synpbase\bin\c_hdl.exe|io:i|time:1749665617|size:1338368|exec:1
+file:C:\lscc\iCEcube2.2020.12\synpbase\bin64\c_hdl.exe|io:i|time:1749665619|size:1754112|exec:1

@@ -1,0 +1,6 @@
+@N: CD630 :"Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\system.vhdl":4:7:4:22|Synthesizing work.debounce_project.rtl.
+@N: CD630 :"Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\FlipFlop.vhdl":4:7:4:16|Synthesizing work.led_toggle.rtl.
+Post processing for work.led_toggle.rtl
+@N: CD630 :"Z:\home\wrongthink\Projects\FPGA\Tutorial\Debouncer#4\debounce.vhdl":5:7:5:14|Synthesizing work.debounce.rtl.
+Post processing for work.debounce.rtl
+Post processing for work.debounce_project.rtl
