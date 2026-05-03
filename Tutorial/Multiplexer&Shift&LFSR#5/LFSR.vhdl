@@ -26,3 +26,4 @@ architecture RTL of LFSR is
   end process;
   o_data <= r_state;
 end architecture RTL;
+   
