@@ -1,13 +1,13 @@
 -- helper functions like log2, ceil
 
 package pkg is
-  function ceil_and_log2(n : positive) return natural;
+  function ceil_and_log2(n : integer) return natural;
 end package pkg;
 
 package body pkg is
-  function ceil_and_log2(n : positive) return natural is
+  function ceil_and_log2(n : integer) return natural is
     variable result : natural := 0;
-    variable value : natural := n - 1;
+    variable value : natural := n-1;
   begin
     while value > 0 loop
       result := result + 1;

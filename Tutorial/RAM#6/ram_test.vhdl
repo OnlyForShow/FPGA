@@ -10,7 +10,7 @@ architecture test_case of ram_tb is
   constant test_width : integer := 16;
   constant test_depth : integer := 256;
 
-  constant depth_bit : natural := 4;
+  constant depth_bit : natural := ceil_and_log2(test_depth);
   
   signal w_global_clk : std_logic := '0';
 
@@ -49,13 +49,13 @@ begin
     
 
     wait until falling_edge(w_global_clk);
-    w_wr_addr <= "0010";
+    w_wr_addr <= "00000010";
     w_wr_data <= "0000111100001111";
 
     w_en_wr <= '1';
     wait until falling_edge(w_global_clk);
     
-    w_wr_addr <= "0100";
+    w_wr_addr <= "00000100";
     w_wr_data <= (others => '1');
     
     
@@ -64,11 +64,11 @@ begin
     w_wr_addr <= (others => 'U');
     w_en_wr <= '0'; -- disable writing
     w_en_rd <= '1'; -- enable reading
-    w_rd_addr <= "0100";
+    w_rd_addr <= "00000100";
     
     wait until falling_edge(w_global_clk);
 
-    w_rd_addr <= "0010";
+    w_rd_addr <= "00000010";
     
     wait until falling_edge(w_global_clk);
 
