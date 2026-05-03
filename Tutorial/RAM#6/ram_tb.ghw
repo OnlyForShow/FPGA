@@ -1,0 +1,128 @@
+$date
+  Sun May  3 12:17:50 2026
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module env $end
+$upscope $end
+$scope module pkg $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module ram_tb $end
+$var reg 1 ! w_global_clk $end
+$var reg 16 " w_wr_data[15:0] $end
+$var reg 16 # r_rd_data[15:0] $end
+$var reg 4 $ w_wr_addr[3:0] $end
+$var reg 4 % w_rd_addr[3:0] $end
+$var reg 1 & w_en_wr $end
+$var reg 1 ' w_en_rd $end
+$scope module uut $end
+$var reg 1 ( i_wr_clk $end
+$comment i_wr_addr is not handled $end
+$var reg 1 ) i_wr_dv $end
+$var reg 16 * i_wr_data[15:0] $end
+$var reg 1 + i_rd_clk $end
+$comment i_rd_addr is not handled $end
+$var reg 1 , i_rd_en $end
+$var reg 1 - o_rd_dv $end
+$var reg 16 . o_rd_data[15:0] $end
+$comment r_mem is not handled $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+bUUUUUUUUUUUUUUUU "
+bUUUUUUUUUUUUUUUU #
+bUUUU $
+bUUUU %
+0&
+0'
+0(
+0)
+bUUUUUUUUUUUUUUUU *
+0+
+0,
+U-
+bUUUUUUUUUUUUUUUU .
+#2000000
+1!
+1(
+1+
+0-
+#4000000
+0!
+b0000111100001111 "
+b0010 $
+1&
+0(
+1)
+b0000111100001111 *
+0+
+#6000000
+1!
+1(
+1+
+#8000000
+0!
+b1111111111111111 "
+b0100 $
+0(
+b1111111111111111 *
+0+
+#10000000
+1!
+1(
+1+
+#12000000
+0!
+bUUUUUUUUUUUUUUUU "
+bUUUU $
+b0100 %
+0&
+1'
+0(
+0)
+bUUUUUUUUUUUUUUUU *
+0+
+1,
+#14000000
+1!
+b1111111111111111 #
+1(
+1+
+1-
+b1111111111111111 .
+#16000000
+0!
+b0010 %
+0(
+0+
+#18000000
+1!
+b0000111100001111 #
+1(
+1+
+b0000111100001111 .
+#20000000
+0!
+0'
+0(
+0+
+0,
+#22000000
+1!
+1(
+1+
+0-
