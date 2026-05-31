@@ -1,0 +1,8 @@
+v 4
+file . "state_machine.vhdl" "50592cf915a706e647bcdfbd0c6b4222b430d24c" "20260530141610.397":
+  entity turnstile_example at 1( 0) + 0 on 26;
+  architecture twoprocess of turnstile_example at 14( 251) + 0 on 27;
+  architecture oneprocess of turnstile_example at 56( 1027) + 0 on 28;
+file . "tb_turnstile.vhdl" "fae368897baf7f73ab60ece604774c26e872aa01" "20260530141610.398":
+  entity turnstile_tb at 1( 0) + 0 on 29;
+  architecture test_case of turnstile_tb at 11( 116) + 0 on 30;

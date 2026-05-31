@@ -1,0 +1,113 @@
+$date
+  Sat May 30 16:16:10 2026
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module env $end
+$upscope $end
+$scope module turnstile_tb $end
+$var reg 1 ! w_reset $end
+$var reg 1 " w_clk $end
+$var reg 1 # w_coin $end
+$var reg 1 $ w_push $end
+$var reg 1 % r1_locked $end
+$var reg 1 & r2_locked $end
+$var reg 1 ' equal $end
+$scope module uut1 $end
+$var reg 1 ( i_reset $end
+$var reg 1 ) i_clk $end
+$var reg 1 * i_coin $end
+$var reg 1 + i_push $end
+$var reg 1 , o_locked $end
+$comment r_curr_state is not handled $end
+$comment r_next_state is not handled $end
+$upscope $end
+$scope module uut2 $end
+$var reg 1 - i_reset $end
+$var reg 1 . i_clk $end
+$var reg 1 / i_coin $end
+$var reg 1 0 i_push $end
+$var reg 1 1 o_locked $end
+$comment r_curr_state is not handled $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+0"
+0#
+0$
+1%
+1&
+1'
+1(
+0)
+0*
+0+
+1,
+1-
+0.
+0/
+00
+11
+#10000000
+1"
+1)
+1.
+#20000000
+0!
+0"
+1#
+0(
+0)
+1*
+0-
+0.
+1/
+#30000000
+1"
+0%
+0&
+1)
+0,
+1.
+01
+#40000000
+0"
+0#
+1$
+0)
+0*
+1+
+0.
+0/
+10
+#50000000
+1"
+1%
+1&
+1)
+1,
+1.
+11
+#60000000
+0"
+0$
+0)
+0+
+0.
+00
+#70000000
+1"
+1)
+1.
