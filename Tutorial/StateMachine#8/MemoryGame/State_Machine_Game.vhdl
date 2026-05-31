@@ -28,7 +28,7 @@ architecture RTL of State_Machine_Game is
                      INCR_SCORE, LOSER, WINNER);
   
   signal r_SM_Main : t_SM_Main;
-  signal w_Count_En, w_Toggle, r_Toggle, : std_logic;
+  signal w_Count_En, w_Toggle, r_Toggle : std_logic;
   signal r_Switch_1, r_Switch_2, r_Switch_3, r_Switch_4, r_Button_DV : std_logic;
 
   type t_Pattern is array (0 to 10) of std_logic_vector(1 downto 0);

@@ -5,10 +5,10 @@ entity State_Machine_Project_Top is
   port(
     i_Clk : in std_logic;
     -- Input switches for entering pattern
-    i_Switches_1 : in std_logic;
-    i_Switches_2 : in std_logic;
-    i_Switches_3 : in std_logic;
-    i_Switches_4 : in std_logic;
+    i_Switch_1 : in std_logic;
+    i_Switch_2 : in std_logic;
+    i_Switch_3 : in std_logic;
+    i_Switch_4 : in std_logic;
     -- Output LEDs for displaying pattern
     o_LED_1 : out std_logic;
     o_LED_2 : out std_logic;
@@ -81,9 +81,10 @@ begin
   Game_Inst : entity work.State_Machine_Game
     generic map(
       CLKS_PER_SEC => CLKS_PER_SEC,
-      GAME_LIMIT => GAME_LIMIT)
+      GAME_LIMIT => GAME_LIMIT
+      )
     port map(
-      i_Clk = > i_Clk,
+      i_Clk => i_Clk,
       i_Switch_1 => w_Switch_1,  
       i_Switch_2 => w_Switch_2,  
       i_Switch_3 => w_Switch_3,  
@@ -108,12 +109,12 @@ begin
       o_Segment_G => w_Segment2_G
       );
 
-  o_Segment_A <= not w_Segment2_A;
-  o_Segment_B <= not w_Segment2_B;
-  o_Segment_C <= not w_Segment2_C;
-  o_Segment_D <= not w_Segment2_D;
-  o_Segment_E <= not w_Segment2_E;
-  o_Segment_F <= not w_Segment2_F;
-  o_Segment_G <= not w_Segment2_G;
+  o_Segment2_A <= not w_Segment2_A;
+  o_Segment2_B <= not w_Segment2_B;
+  o_Segment2_C <= not w_Segment2_C;
+  o_Segment2_D <= not w_Segment2_D;
+  o_Segment2_E <= not w_Segment2_E;
+  o_Segment2_F <= not w_Segment2_F;
+  o_Segment2_G <= not w_Segment2_G;
   
 end architecture RTL;

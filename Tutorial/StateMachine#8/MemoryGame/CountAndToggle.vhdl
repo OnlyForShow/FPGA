@@ -10,7 +10,7 @@ entity Count_And_Toggle is
     i_clk : in std_logic;
     i_enable : in std_logic;
     o_toggle : out std_logic
-    )
+    );
 end entity Count_And_Toggle;
 
 

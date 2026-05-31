@@ -20,6 +20,7 @@ architecture RTL of Binary_To_7Segment is
 begin
 
   process(i_Clk) is
+  begin
     if rising_edge(i_Clk) then
       case i_Binary_Num is
         when "0000" =>
