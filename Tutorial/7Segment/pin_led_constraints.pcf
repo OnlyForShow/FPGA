@@ -1,0 +1,16 @@
+# LED pins:
+
+# 7 Segment Display
+set_io o_Segment_A2 100
+set_io o_Segment_B2 99
+set_io o_Segment_C2 97
+set_io o_Segment_D2 95
+set_io o_Segment_E2 94
+set_io o_Segment_F2 8
+set_io o_Segment_G2 96
+
+# Push-Button switches:
+set_io i_btn 53
+
+# clock 
+set_io i_clk 15
