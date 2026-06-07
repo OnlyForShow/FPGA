@@ -1,5 +1,5 @@
 library ieee;
-use ieee.std_logic_1164.all;
+ use ieee.std_logic_1164.all;
 
 entity Binary_To_7Segment is
   port(
