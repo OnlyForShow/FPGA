@@ -15,23 +15,23 @@ end entity Count_And_Toggle;
 
 
 architecture RTL of Count_And_Toggle is
-  signal w_counter : natural range 0 to MAX_SIZE - 1  := 0;
-  signal w_toggle : std_logic := '0';
+  signal w_counter : natural range 0 to MAX_SIZE/2 - 1  := 0;
+  signal w_toggle : std_logic := '1';
 begin
 
   process(i_Clk) is
   begin
     if rising_edge(i_Clk) then
       if i_Enable = '1' then 
-        if w_counter = MAX_SIZE then
+        if w_counter = MAX_SIZE/2 - 1 then
           w_counter <= 0;
           w_Toggle <= not w_Toggle;
         else
           w_counter <= w_counter + 1;
         end if;
       else
-	w_counter <= 0;
-	w_Toggle <= '0';  
+        w_counter <= 0;
+        w_Toggle <= '0';  
 
       end if;
     end if;

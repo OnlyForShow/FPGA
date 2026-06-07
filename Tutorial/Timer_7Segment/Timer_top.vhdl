@@ -31,7 +31,7 @@ end entity Timer_Top;
 architecture RTL of Timer_Top is
   constant DEBOUNCE_LIMIT : integer := 250000; -- 10 ms debounce filter
   constant BIT_WIDTH : integer := 8;
-  constant MAX_SIZE : integer := 12500000;
+  constant MAX_SIZE : integer := 25000000;
   
   signal w_Switch : std_logic;
   signal w_Reset : std_logic;
