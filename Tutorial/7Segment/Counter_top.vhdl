@@ -16,7 +16,7 @@ entity Counter_Top is
     o_Segment_D1 : out std_logic;
     o_Segment_E1 : out std_logic;
     o_Segment_F1 : out std_logic;
-    o_Segment_G1 : out std_logic
+    o_Segment_G1 : out std_logic;
     o_Segment_A2 : out std_logic;
     o_Segment_B2 : out std_logic;
     o_Segment_C2 : out std_logic;
