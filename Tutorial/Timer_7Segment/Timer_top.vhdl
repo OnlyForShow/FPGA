@@ -25,15 +25,16 @@ entity Timer_Top is
     o_Segment_F2 : out std_logic;
     o_Segment_G2 : out std_logic
     );
-end entity Counter_Top;
+end entity Timer_Top;
 
 
-architecture RTL of Counter_Top is
+architecture RTL of Timer_Top is
   constant DEBOUNCE_LIMIT : integer := 250000; -- 10 ms debounce filter
   constant BIT_WIDTH : integer := 8;
-  constant MAX_SIZE : integer := 25000000;
+  constant MAX_SIZE : integer := 12500000;
   
   signal w_Switch : std_logic;
+  signal w_Reset : std_logic;
   signal w_Counter : std_logic_vector(BIT_WIDTH-1 downto 0);
   signal w_Segment2_A, w_Segment2_B, w_Segment2_C, w_Segment2_D : std_logic; 
   signal w_Segment2_E, w_Segment2_F, w_Segment2_G : std_logic; 
@@ -71,7 +72,7 @@ begin
     i_Reset => w_Reset,
     i_Enable => '1',
     o_DEC_Least_Significant => w_Counter(3 downto 0),
-    o_DEC_Most_Significant => w_Counter(BIT_WIDTH - 1 downto 4),
+    o_DEC_Most_Significant => w_Counter(BIT_WIDTH - 1 downto 4)
     );
 
     
