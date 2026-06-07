@@ -62,7 +62,7 @@ begin
     )
   port map(
     i_Clk => i_clk,
-    i_Enable => '1',
+    i_Enable => not w_Reset,
     o_Toggle => w_Switch
     );
   

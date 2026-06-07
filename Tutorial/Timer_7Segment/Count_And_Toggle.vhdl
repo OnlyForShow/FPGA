@@ -31,7 +31,7 @@ begin
         end if;
       else
         w_counter <= 0;
-        w_Toggle <= '0';  
+        w_Toggle <= '1';  
 
       end if;
     end if;
