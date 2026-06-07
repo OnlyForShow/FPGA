@@ -26,6 +26,6 @@ begin
     end if;
   end process;
 
-  o_counter <= r_counter;
+  o_counter <= std_logic_vector(r_counter);
   
 end architecture RTL;

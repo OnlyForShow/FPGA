@@ -1,11 +1,15 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+
 
 entity Counter_Top is
   port(
     i_btn : in std_logic;
     i_clk : in std_logic;
+    o_LED_1 : out std_logic;
+    o_LED_2 : out std_logic;
+    o_LED_3 : out std_logic;
+    o_LED_4 : out std_logic;
     o_Segment_A2 : out std_logic;
     o_Segment_B2 : out std_logic;
     o_Segment_C2 : out std_logic;
@@ -18,11 +22,14 @@ end entity Counter_Top;
 
 
 architecture RTL of Counter_Top is
-  constant DEBOUNCE_LIMIT : integer := 25000000; -- 10 ms debounce filter
+  constant DEBOUNCE_LIMIT : integer := 250000; -- 10 ms debounce filter
   constant BIT_WIDTH : integer := 4;
   
   signal w_Switch : std_logic;
-  signal w_Counter : unsigned(BIT_WIDTH-1 downto 0);
+  signal w_Counter : std_logic_vector(BIT_WIDTH-1 downto 0);
+  signal w_Segment2_A, w_Segment2_B, w_Segment2_C, w_Segment2_D : std_logic; 
+  signal w_Segment2_E, w_Segment2_F, w_Segment2_G : std_logic; 
+  
 begin
 
   Debouncer : entity work.Debounce
@@ -46,18 +53,31 @@ begin
   );
 
   Seven_Segment : entity work.Binary_To_7Segment
-  port(
+  port map(
     i_Clk => i_clk,
-    i_Binary_Num => std_logic_vector(w_Counter),
-    o_Segment_A => o_Segment_A2, 
-    o_Segment_B => o_Segment_B2,
-    o_Segment_C => o_Segment_C2,
-    o_Segment_D => o_Segment_D2,
-    o_Segment_E => o_Segment_E2,
-    o_Segment_F => o_Segment_F2,
-    o_Segment_G => o_Segment_G2   
+    i_Binary_Num => w_Counter,
+    o_Segment_A => w_Segment2_A, 
+    o_Segment_B => w_Segment2_B,
+    o_Segment_C => w_Segment2_C,
+    o_Segment_D => w_Segment2_D,
+    o_Segment_E => w_Segment2_E,
+    o_Segment_F => w_Segment2_F,
+    o_Segment_G => w_Segment2_G   
     );
 
+    o_Segment_A2 <= not w_Segment2_A;
+    o_Segment_B2 <= not w_Segment2_B;
+    o_Segment_C2 <= not w_Segment2_C;
+    o_Segment_D2 <= not w_Segment2_D;
+    o_Segment_E2 <= not w_Segment2_E;  
+    o_Segment_F2 <= not w_Segment2_F;
+    o_Segment_G2 <= not w_Segment2_G;
+
+    o_LED_1 <= '0';
+    o_LED_2 <= '0';
+    o_LED_3 <= '0';
+    o_LED_4 <= '0';
+  
 end architecture RTL;
     
 
