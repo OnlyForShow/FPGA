@@ -61,7 +61,7 @@ begin
   process(r_curr_state, wr_baud_clock, i_en) is
   begin
     r_next_state <= r_curr_state;
-    
+    w_write_bit <= '1';
     case r_curr_state is
 
       when wait_for_rising_en =>
