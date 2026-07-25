@@ -37,6 +37,8 @@ begin
 
   process is
   begin
+    r_rst <= '1';
+    wait for BAUD_PERIOD;
     r_rst <= '0';
     wait for BAUD_PERIOD;
 
@@ -49,7 +51,7 @@ begin
     wait for BAUD_PERIOD;
     
     -- 1 LSB
-    r_rx <= '1';
+    r_rx <= '0';
     wait for BAUD_PERIOD;
 
     -- 2 LSB    
@@ -57,11 +59,11 @@ begin
     wait for BAUD_PERIOD;
 
     -- 3 LSB    
-    r_rx <= '1';
+    r_rx <= '0';
     wait for BAUD_PERIOD;
 
     -- 4 LSB    
-    r_rx <= '0';
+    r_rx <= '1';
     wait for BAUD_PERIOD;
 
     -- 5 LSB    
@@ -73,10 +75,10 @@ begin
     wait for BAUD_PERIOD;
 
     -- 7 LSB    
-    r_rx <= '1';
+    r_rx <= '0';
     wait for BAUD_PERIOD;
 
-    --171 dec; AB hex
+    --49 dec; 31 hex
 
     --stop bit
     r_rx <= '1';
@@ -89,7 +91,7 @@ begin
     wait for BAUD_PERIOD;
 
     -- 0 LSB
-    r_rx <= '0';
+    r_rx <= '1';
     wait for BAUD_PERIOD;
     
     -- 1 LSB
@@ -105,22 +107,22 @@ begin
     wait for BAUD_PERIOD;
 
     -- 4 LSB    
-    r_rx <= '0';
+    r_rx <= '1';
     wait for BAUD_PERIOD;
 
     -- 5 LSB    
-    r_rx <= '0';
+    r_rx <= '1';
     wait for BAUD_PERIOD;
 
     -- 6 LSB    
-    r_rx <= '1';
+    r_rx <= '0';
     wait for BAUD_PERIOD;
 
     -- 7 LSB    
     r_rx <= '0';
     wait for BAUD_PERIOD;
 
-    --72 dec; 48 hex
+    -- dec; C3 hex
 
     --stop bit
     r_rx <= '1';

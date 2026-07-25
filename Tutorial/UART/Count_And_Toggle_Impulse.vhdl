@@ -38,7 +38,7 @@ begin
       else
         w_counter <= 0;
         w_Toggle <= '0';  
-
+        w_state <= '1';
       end if;
     end if;
   end process;

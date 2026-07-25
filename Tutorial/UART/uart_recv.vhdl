@@ -34,7 +34,7 @@ architecture RTL of uart_recv is
   signal next_w_enable_counter : std_logic := '0';
   
 
-  signal w_read_buffer : std_logic_vector(7 downto 0);
+  signal w_read_buffer : std_logic_vector(7 downto 0) := "00000000";
   signal next_w_read_buffer : std_logic_vector(7 downto 0) := "00000000";
 
 
