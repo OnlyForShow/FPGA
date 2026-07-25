@@ -1,9 +1,9 @@
 OPTIONS = --std=08
-SOURCE1 = Count_And_Toggle.vhdl uart_recv.vhdl uart_recv_tb.vhdl
+SOURCE1 = Count_And_Toggle_Impulse.vhdl uart_recv.vhdl uart_recv_tb.vhdl
 TEST_BENCH_TOP1 = uart_recv_tb
 OUTPUT1 = uart_recv_tb.ghw
 
-SOURCE2 = Count_And_Toggle.vhdl uart_tx.vhdl uart_tx_tb.vhdl
+SOURCE2 = Count_And_Toggle_Impulse.vhdl uart_tx.vhdl uart_tx_tb.vhdl
 TEST_BENCH_TOP2 = uart_tx_tb
 OUTPUT2 = uart_tx_tb.ghw
 
