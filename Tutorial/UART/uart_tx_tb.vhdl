@@ -86,8 +86,52 @@ begin
 
     assert w_read = '1' report "wire should be high since it signifies ending of data transmission";
     
-    wait for BAUD_PERIOD;
+    wait for BAUD_PERIOD*3;
+
+        assert w_read = '1' report "output must be 1 since there is no data being sent!";
+    --start bit
+    r_data <= "11111100";
+    r_en <= '1';
+
+    wait for BAUD_PERIOD/2;
+
+    assert w_read = '0' report "Wire be pulled down to ground (0) to signify begin of transmission!";
     
+    wait for BAUD_PERIOD/2;
+    r_en <= '0'; -- the data to be sent is already stored in uart_tx module via
+                 -- buffer
+                
+    wait for BAUD_PERIOD/2;
+
+
+    assert w_read = '0' report "1. LSB of 11111100 should be zero";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '0' report "2. LSB of 11111100 should be zero";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "3. LSB of 11111100 should be one";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "4. LSB of 11111100 should be one";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "5. LSB of 11111100 should be one";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "6. LSB of 11111100 should be one";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "7. LSB of 11111100 should be one";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "8. LSB of 11111100 should be one";
+    wait for BAUD_PERIOD;
+
+    assert w_read = '1' report "wire should be high since it signifies ending of data transmission";
+    
+    wait for BAUD_PERIOD*3;
+
 
     finish;
     
