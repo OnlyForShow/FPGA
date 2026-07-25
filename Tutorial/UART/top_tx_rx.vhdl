@@ -33,7 +33,7 @@ end entity top_receive;
 
 architecture RTL of top_receive is
 
-  constant BAUD_RATE : integer := 9600;
+  constant BAUD_RATE : integer := 115200;
   constant CLK_FREQ : integer := 25_000_000;
 
   signal w_reset : std_logic;
@@ -47,6 +47,8 @@ architecture RTL of top_receive is
   signal w_recv_result : std_logic_vector(7 downto 0);
 
   signal rx_data_rdy : std_logic;
+
+  signal w_UART_TX : std_logic;
   
 begin
 
@@ -75,7 +77,7 @@ begin
     i_rst => w_reset,
     o_data_rx => w_recv_result,
     o_rdy_rx => rx_data_rdy,
-    o_data_tx => o_UART_TX,
+    o_data_tx => w_UART_TX,
     o_rdy_tx => open
     );
 
@@ -128,5 +130,6 @@ begin
     o_LED_3 <= '0';
     o_LED_4 <= '0';
 
+    o_UART_TX <= w_UART_TX;
   
 end architecture RTL;

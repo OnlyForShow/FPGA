@@ -23,7 +23,7 @@ architecture RTL of uart_tx is
   constant SLOW_CLOCK_COUNTER : integer := CLK_FREQ / BAUD_RATE;
   
   type t_state is (WAIT_FOR_RISING_EN, PREPARE_BAUD_CLOCK ,BIT_ENCODING, BIT_STOP);
-  signal r_curr_state, r_next_state : t_state := WAIT_FOR_RISING_EN;
+  signal r_curr_state, r_next_state : t_state;
   
 
   signal w_rdy : std_logic := '0';
