@@ -47,10 +47,10 @@ architecture RTL of top_receive is
   
 begin
 
-  process(rx_data_rdy) is
+  process(rx_data_rdy, w_recv_buffer) is
   begin
     if rx_data_rdy = '1' then
-      w_recv_result <= w_recv_buffer;
+	w_recv_result <= w_recv_buffer;
     end if;
   end process;
   

@@ -26,14 +26,14 @@ architecture RTL of uart_recv is
   
   signal w_enable_counter : std_logic := '0';
   signal w_rdy : std_logic := '1';
-  signal wr_baud_clock : std_logic := '0';
+  signal wr_baud_clock : std_logic;
 
   signal w_read_buffer : std_logic_vector(7 downto 0) := "00000000";
 
-  signal r_counter_index : integer range 0 to 8 := 0; 
+  signal r_counter_index : integer range 0 to 7 := 0; 
 
   signal old_i_rx, next_i_rx : std_logic := '1';
-  signal old_wr_baud_clock, next_wr_baud_clock : std_logic := '0';
+  signal old_wr_baud_clock, next_wr_baud_clock : std_logic;
   
 begin
 
@@ -47,7 +47,7 @@ begin
     o_Toggle => wr_baud_clock
     );
 
-  process(i_rx, wr_baud_clock) is
+  process(i_rx, wr_baud_clock, next_i_rx, next_wr_baud_clock) is
   begin
     old_i_rx <= next_i_rx;
     next_i_rx <= i_rx;
@@ -68,14 +68,11 @@ begin
   end process;
 
   
-  process(r_curr_state, next_wr_baud_clock, next_i_rx) is
+  process(r_curr_state, wr_baud_clock, i_rx) is
   begin
     r_next_state <= r_curr_state;
 
-    --w_rdy <= '0';
-    --w_enable_counter <= '1';
-    --r_counter_index <= 0;
-    
+        
     case r_curr_state is
 
       when WAITFORFALLING =>
@@ -94,7 +91,8 @@ begin
         
       when BITSAMPLING =>
         if old_wr_baud_clock = '0' and next_wr_baud_clock = '1' then
-          if r_counter_index = 8 then
+          if r_counter_index = 7 then
+            w_read_buffer(r_counter_index) <= i_rx;
             w_rdy <= '1';
             w_enable_counter <= '0';
             r_next_state <= WAITFORFALLING;
