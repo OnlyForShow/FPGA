@@ -40,6 +40,8 @@ begin
 
   process is
   begin
+    r_rst <= '1';
+    wait for BAUD_PERIOD;
     r_rst <= '0';
     wait for BAUD_PERIOD;
     assert w_read = '1' report "output must be 1 since there is no data being sent!";
@@ -56,6 +58,7 @@ begin
                  -- buffer
                 
     wait for BAUD_PERIOD/2;
+
 
     assert w_read = '0' report "1. LSB of 00110110 should be zero";
     wait for BAUD_PERIOD;

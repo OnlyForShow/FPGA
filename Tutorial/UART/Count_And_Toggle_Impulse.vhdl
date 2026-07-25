@@ -9,6 +9,7 @@ entity Count_And_Toggle_Impulse is
   port(
     i_Clk : in std_logic;
     i_Enable : in std_logic;
+    i_Reset : in std_logic;
     o_Toggle : out std_logic
     );
 end entity Count_And_Toggle_Impulse;
@@ -22,8 +23,12 @@ begin
 
   process(i_Clk) is
   begin
-    
-    if rising_edge(i_Clk) then
+
+    if i_Reset = '1' then
+      w_counter <= 0;
+      w_Toggle <= '0';  
+      w_state <= '1';
+    elsif rising_edge(i_Clk) then
       w_Toggle <= '0';
       if i_Enable = '1' then 
         if w_counter = MAX_SIZE/2 - 1 then

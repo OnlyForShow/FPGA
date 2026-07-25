@@ -53,6 +53,7 @@ begin
   port map(
     i_Clk => i_clk,
     i_Enable => w_enable_counter,
+    i_Reset => '0',
     o_Toggle => wr_baud_toggle
     );
 
