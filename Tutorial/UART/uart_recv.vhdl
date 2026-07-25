@@ -95,6 +95,8 @@ begin
           next_w_enable_counter <= '1';
           next_r_counter_index <= 0;
           next_w_read_buffer <= "00000000";
+        else
+          next_w_enable_counter <= '0';
         end if;
 
       when STARTSLOWCLOCK =>
@@ -121,7 +123,7 @@ begin
       when STOPBIT =>
         if wr_baud_toggle = '1' then
           r_next_state <= WAITFORFALLING;
-          next_w_enable_counter <= '0';
+          w_rdy <= '1';
           if i_rx = '1' then
             w_rdy <= '1';
           end if;
