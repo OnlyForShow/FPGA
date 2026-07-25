@@ -22,7 +22,7 @@ architecture RTL of uart_recv is
   constant SLOW_CLOCK_COUNTER : integer := CLK_FREQ / BAUD_RATE;
   
   type t_state is (WAITFORFALLING, STARTSLOWCLOCK, BITSAMPLING, STOPBIT);
-  signal r_curr_state, r_next_state : t_state := WAITFORFALLING;
+  signal r_curr_state, r_next_state : t_state;
   
 
   signal w_rdy : std_logic := '0';
@@ -34,7 +34,7 @@ architecture RTL of uart_recv is
   signal next_w_enable_counter : std_logic := '0';
   
 
-  signal w_read_buffer : std_logic_vector(7 downto 0) := "00000000";
+  signal w_read_buffer : std_logic_vector(7 downto 0);
   signal next_w_read_buffer : std_logic_vector(7 downto 0) := "00000000";
 
 
@@ -74,7 +74,7 @@ begin
 
   
 
-  process(r_curr_state, wr_baud_toggle, i_rx) is
+  process(r_curr_state, wr_baud_toggle, i_rx, w_read_buffer, r_counter_index, w_enable_counter) is
   begin
     
     r_next_state <= r_curr_state;

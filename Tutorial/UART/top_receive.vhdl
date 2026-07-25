@@ -7,6 +7,7 @@ entity top_receive is
   port(
     i_UART_RX : in std_logic;
     i_clk : in std_logic;
+    i_btn : in std_logic;
     o_LED_1 : out std_logic;
     o_LED_2 : out std_logic;
     o_LED_3 : out std_logic;
@@ -31,8 +32,10 @@ end entity top_receive;
 
 architecture RTL of top_receive is
 
-  constant BAUD_RATE : integer := 9600;
+  constant BAUD_RATE : integer := 38400;
   constant CLK_FREQ : integer := 25_000_000;
+
+  signal w_reset : std_logic;
   
   signal w_Segment2_A, w_Segment2_B, w_Segment2_C, w_Segment2_D : std_logic; 
   signal w_Segment2_E, w_Segment2_F, w_Segment2_G : std_logic; 
@@ -40,19 +43,23 @@ architecture RTL of top_receive is
   signal w_Segment1_A, w_Segment1_B, w_Segment1_C, w_Segment1_D : std_logic; 
   signal w_Segment1_E, w_Segment1_F, w_Segment1_G : std_logic;
 
-  signal w_recv_buffer : std_logic_vector(7 downto 0) := "00000000";
-  signal w_recv_result : std_logic_vector(7 downto 0) := "00000000";
+  signal w_recv_result : std_logic_vector(7 downto 0);
 
-  signal rx_data_rdy : std_logic := '0';
+  signal rx_data_rdy : std_logic;
   
 begin
 
-  process(rx_data_rdy, w_recv_buffer) is
-  begin
-    if rx_data_rdy = '1' then
-	w_recv_result <= w_recv_buffer;
-    end if;
-  end process;
+  debouncer : entity work.Debounce
+    generic map(
+      DEBOUNCE_LIMIT => 250000
+      )
+    port map(
+      i_clk => i_clk,
+      i_Bouncy => i_btn,
+      o_Debounced => w_reset
+      );
+    
+
   
   uart_receiver : entity work.uart_recv
   generic map(
@@ -62,8 +69,8 @@ begin
   port map(
     i_rx => i_UART_RX,
     i_clk => i_clk,
-    i_rst => '0',
-    o_read => w_recv_buffer,
+    i_rst => w_reset,
+    o_read => w_recv_result,
     o_rdy => rx_data_rdy
     );
 
