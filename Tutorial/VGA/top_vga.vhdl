@@ -8,9 +8,13 @@ entity top_vga is
     i_Clk  : in std_logic;
 
     -- UART Data
-    i_UART_RX : in  std_logic;
+    i_UART_RX : in  std_logic;
     o_UART_TX : out std_logic;
-    
+    i_btn : in std_logic;
+    o_LED_1 : out std_logic;
+    o_LED_2 : out std_logic;
+    o_LED_3 : out std_logic;
+    o_LED_4 : out std_logic;
     -- Segment1 is upper digit, Segment2 is lower digit
     o_Segment1_A : out std_logic;
     o_Segment1_B : out std_logic;
@@ -46,7 +50,7 @@ end entity top_vga;
 architecture RTL of top_vga is
 
   signal w_RX_DV     : std_logic;
-  signal w_RX_Byte   : std_logic_vector(7 downto 0);
+  signal w_RX_Byte   : std_logic_vector(7 downto 0) := (others => '0');
   signal w_TX_Active : std_logic;
   signal w_TX_Serial : std_logic;
 
@@ -86,8 +90,21 @@ architecture RTL of top_vga is
   signal w_Red_Video_TP : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
   signal w_Grn_Video_TP : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
   signal w_Blu_Video_TP : std_logic_vector(c_VIDEO_WIDTH-1 downto 0);
-  
+
+  signal w_reset : std_logic;
 begin
+
+  debouncer : entity work.Debounce
+    generic map(
+      DEBOUNCE_LIMIT => 250_000
+      )
+    port map(
+      i_clk => i_Clk,
+      i_Bouncy => i_btn,
+      o_Debounced => w_reset
+      );
+  
+
   
   UART_RX_Inst : entity work.uart_recv
     generic map (
@@ -97,7 +114,7 @@ begin
     port map (
       i_clk => i_Clk,
       i_rx => i_UART_RX,
-      i_rst => '0',
+      i_rst => w_reset,
       o_rdy => w_RX_DV,
       o_read => w_RX_Byte
       );
@@ -113,8 +130,8 @@ begin
       i_clk => i_Clk,
       i_en => w_RX_DV,
       i_tx => w_RX_Byte,
-      i_rst => '0'
-      o_rdy => w_TX_Active,
+      i_rst => w_reset,
+      o_rdy => open,
       o_write => w_TX_Serial
       );
   
@@ -165,7 +182,14 @@ begin
   o_Segment2_F <= not w_Segment2_F;
   o_Segment2_G <= not w_Segment2_G;
   
-  ------------------------------------------------------------------------------
+  -- turn all leds off
+  o_LED_1 <= '0';
+  o_LED_2 <= '0';
+  o_LED_3 <= '0';
+  o_LED_4 <= '0';
+  
+  
+  ----------------------------------------------------------------------------
   -- VGA Test Patterns
   ------------------------------------------------------------------------------
   -- Purpose: Register test pattern from UART when DV pulse is seen

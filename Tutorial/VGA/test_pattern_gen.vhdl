@@ -21,14 +21,14 @@ entity test_pattern_gen is
     o_VSync : out std_logic;
     o_Red_Video : out std_logic_vector(g_video_width-1 downto 0);
     o_Grn_Video : out std_logic_vector(g_video_width-1 downto 0);
-    o_Blu_Video : out std_logic_vector(g_video_width-1 downto 0);
+    o_Blu_Video : out std_logic_vector(g_video_width-1 downto 0)
     );
     
 end entity test_pattern_gen;
 
 architecture RTL of test_pattern_gen is
 
-  r_Red_Video, r_Grn_Video, r_Blue_Video : std_logic_vector(g_video_width-1 downto 0);
+  signal r_Red_Video, r_Grn_Video, r_Blu_Video : std_logic_vector(g_video_width-1 downto 0);
 
   
     
@@ -59,8 +59,7 @@ begin
         r_Red_Video <= "000";
         r_Grn_Video <= "000";
         r_Blu_Video <= "111";
-      elsif i_Pattern = "0101" then --  chees screen
-
+      elsif i_Pattern = "0101" then --  chess screen
         if i_Row_Count(4) = '1' and i_Col_Count(4) = '1' then 
           r_Red_Video <= "000";
           r_Grn_Video <= "000";
@@ -118,7 +117,7 @@ begin
 
   o_Red_Video <= r_Red_Video;
   o_Grn_Video <= r_Grn_Video;
-  o_Blu_Video <= r_Blue_Video;
+  o_Blu_Video <= r_Blu_Video;
     
   o_HSync <= i_HSync;
   o_VSync <= i_VSync;

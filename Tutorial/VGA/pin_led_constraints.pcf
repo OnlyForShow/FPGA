@@ -13,7 +13,7 @@
 # ##############################################################################
 
 ### Main FPGA Clock
-set_io i_clk 15
+set_io i_Clk 15
 
 ### LED Pins:
 set_io o_LED_1 56
@@ -28,20 +28,20 @@ set_io i_Switch_3 54
 set_io i_Switch_4 52
 
 ### 7 Segment Outputs
-set_io o_Segment_A1 3
-set_io o_Segment_B1 4
-set_io o_Segment_C1 93
-set_io o_Segment_D1 91
-set_io o_Segment_E1 90
-set_io o_Segment_F1 1
-set_io o_Segment_G1 2
-set_io o_Segment_A2 100
-set_io o_Segment_B2 99
-set_io o_Segment_C2 97
-set_io o_Segment_D2 95
-set_io o_Segment_E2 94
-set_io o_Segment_F2 8
-set_io o_Segment_G2 96
+set_io o_Segment1_A 3
+set_io o_Segment1_B 4
+set_io o_Segment1_C 93
+set_io o_Segment1_D 91
+set_io o_Segment1_E 90
+set_io o_Segment1_F 1
+set_io o_Segment1_G 2
+set_io o_Segment2_A 100
+set_io o_Segment2_B 99
+set_io o_Segment2_C 97
+set_io o_Segment2_D 95
+set_io o_Segment2_E 94
+set_io o_Segment2_F 8
+set_io o_Segment2_G 96
 
 ## UART Outputs
 set_io i_UART_RX 73

@@ -1,6 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-
+use ieee.numeric_std.all;
 
 entity vga_sync_porch is
     generic(
@@ -88,9 +88,9 @@ begin
   o_HSync <= w_HSync_active;  
   o_VSync <= w_VSync_active;
 
-  o_Red_Video <= i_Red_Video when i_HSync and i_VSync else "000";
-  o_Grn_Video <= i_Grn_Video when i_HSync and i_VSync else "000";
-  o_Blu_Video <= i_Blu_Video when i_HSync and i_VSync else "000";
+  o_Red_Video <= i_Red_Video when (i_HSync and i_VSync) = '1' else "000";
+  o_Grn_Video <= i_Grn_Video when (i_HSync and i_VSync) = '1' else "000";
+  o_Blu_Video <= i_Blu_Video when (i_HSync and i_VSync) = '1' else "000";
   
     
 end architecture RTL;
