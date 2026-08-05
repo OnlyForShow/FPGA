@@ -40,9 +40,15 @@ begin
     if rising_edge(i_Clk) then
 
       if i_Pattern = "0000" then --black screen
-        r_Red_Video <= "000";
-        r_Grn_Video <= "000";
-        r_Blu_Video <= "000";
+        if i_Row_Count(4) = '1' and i_Col_Count(4) = '1' then 
+          r_Red_Video <= "000";
+          r_Grn_Video <= "000";
+          r_Blu_Video <= "000";
+        else
+          r_Red_Video <= "111";
+          r_Grn_Video <= "111";
+          r_Blu_Video <= "111";          
+        end if;
       elsif i_Pattern = "0001" then -- orange screen
         r_Red_Video <= "111";
         r_Grn_Video <= "111";
